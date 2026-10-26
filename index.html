@@ -155,14 +155,96 @@ footer a{color:var(--yellow);text-decoration:none}
 </section>
 
 <section class="cta" id="contact">
-  <div class="cta-inner">
-    <div>
+  <div class="cta-inner" style="display:block;max-width:760px">
+    <div style="text-align:center;margin-bottom:25px">
+      <p style="color:#ffdc00;font-weight:bold">GROW WITH MYTHIC BRANDS</p>
       <h2>Advertise <span>With Us!</span></h2>
-      <p>Ready to promote your business? Contact Mythic Brands to discuss submitting your advert.</p>
-      <p>Free advert submissions during our launch, subject to review.</p>
+      <p>Complete the form to promote your business, product or service.</p>
+      <p>Free advert submissions during our launch.</p>
     </div>
-    <a class="btn whatsapp" target="_blank" rel="noopener" href="https://wa.me/254790006169?text=Hello%20Mythic%20Brands%2C%20I%20would%20like%20to%20advertise%20my%20business.">☏ Advertise on WhatsApp →</a>
+
+    <form id="advertForm"
+      style="background:white;color:#10203b;padding:22px;border-radius:15px">
+
+      <label for="businessName">Business or advertiser name *</label>
+      <input id="businessName" name="businessName"
+        required maxlength="100"
+        placeholder="e.g. Epic Fashion">
+
+      <label for="advertTitle">Advert title *</label>
+      <input id="advertTitle" name="advertTitle"
+        required maxlength="120"
+        placeholder="e.g. New shoes available">
+
+      <label for="category">Advert category *</label>
+      <select id="category" name="category" required
+        style="width:100%;padding:12px;margin:8px 0 16px;border-radius:6px">
+        <option value="">Choose a category</option>
+        <option>Business</option>
+        <option>Electronics</option>
+        <option>Fashion</option>
+        <option>Food and Restaurants</option>
+        <option>Services</option>
+        <option>Jobs and Opportunities</option>
+        <option>Other</option>
+      </select>
+
+      <label for="description">Describe your advert *</label>
+      <textarea id="description" name="description"
+        required maxlength="1000" rows="4"
+        placeholder="Describe your product, service, price and offer"></textarea>
+
+      <label for="location">Location or target market *</label>
+      <input id="location" name="location"
+        required maxlength="100"
+        placeholder="e.g. Nairobi, Kenya or worldwide">
+
+      <label for="contactDetails">Your phone number or email *</label>
+      <input id="contactDetails" name="contactDetails"
+        required maxlength="120"
+        placeholder="How customers can reach you">
+
+      <button type="submit"
+        style="width:100%;padding:15px;margin-top:16px;
+        background:#16c766;color:white;border:0;border-radius:9px;
+        font-size:16px;font-weight:bold">
+        Send Advert via WhatsApp →
+      </button>
+
+      <p style="color:#64748b;font-size:13px">
+        Your details will be placed in a WhatsApp message to Mythic Brands.
+        Review the message and press Send in WhatsApp to submit your advert.
+      </p>
+    </form>
   </div>
+</section>
+
+<script>
+document.getElementById("advertForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  const data = new FormData(form);
+  const message = [
+    "HELLO MYTHIC BRANDS - NEW ADVERT SUBMISSION",
+    "",
+    "Business: " + data.get("businessName"),
+    "Advert title: " + data.get("advertTitle"),
+    "Category: " + data.get("category"),
+    "Description: " + data.get("description"),
+    "Location / target market: " + data.get("location"),
+    "Advertiser contact: " + data.get("contactDetails")
+  ].join("\n");
+
+  const url = "https://wa.me/254790006169?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
+});
+  </script>
+  
 </section>
 </main>
 
