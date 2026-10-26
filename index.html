@@ -1,148 +1,177 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mythic Brands | Advertise Here</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101025;
-      color: white;
-    }
-    header {
-      padding: 24px 16px;
-      text-align: center;
-      background: linear-gradient(135deg, #ff512f, #dd2476, #512da8);
-    }
-    header h1 { font-size: 36px; margin: 8px 0; }
-    header p { font-size: 17px; }
-    nav {
-      background: #191936;
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    .hero {
-      padding: 45px 20px;
-      text-align: center;
-      background: #20204a;
-    }
-    .hero h2 { font-size: 30px; }
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      background: #ff512f;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 12px;
-      font-weight: bold;
-    }
-    main { padding: 20px; max-width: 1000px; margin: auto; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: #202044;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #41416a;
-    }
-    .card h3 { color: #ffb36b; }
-    section { margin-bottom: 35px; }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 6px;
-      border: 1px solid #777;
-      font-size: 16px;
-    }
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #191936;
-      color: #ccc;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07152d">
+<title>Mythic Brands | Advertise. Connect. Grow.</title>
+<style>
+:root{--navy:#07152d;--blue:#0866ff;--yellow:#ffdc00;--white:#fff;--muted:#64748b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#10203b;background:#f4f8ff;line-height:1.6}
+header{background:var(--navy);color:white;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:900;line-height:1.2}
+.logo span{color:var(--yellow)}
+.logo small{display:block;font-size:11px;font-weight:400;color:#dbe5ff}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px;font-weight:bold}
+nav a:hover{color:var(--yellow)}
+.hero{padding:65px 6%;color:white;background:linear-gradient(120deg,#07152d,#104bb8 60%,#7926a8);text-align:left}
+.hero-inner{max-width:1100px;margin:auto}
+.tag{color:var(--yellow);font-size:13px;font-weight:bold;text-transform:uppercase;letter-spacing:1px}
+h1{font-size:clamp(36px,7vw,64px);line-height:1.08;margin:12px 0}
+.hero h1 span{color:var(--yellow)}
+.hero p{max-width:620px;color:#e5edff;font-size:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:13px 19px;border-radius:9px;text-decoration:none;font-weight:bold;border:0}
+.primary{background:var(--yellow);color:#09162c}
+.secondary{border:1px solid white;color:white}
+.whatsapp{background:#16c766;color:white}
+.wrap{max-width:1120px;margin:auto;padding:42px 5%}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+h2{font-size:27px;line-height:1.2;margin:0 0 8px}
+.sub{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;border:1px solid #dce5f2;border-radius:15px;overflow:hidden;box-shadow:0 5px 18px #10203b0b}
+.card-top{padding:24px;font-size:38px;background:linear-gradient(135deg,#dceaff,#fff1c2)}
+.card-body{padding:18px}
+.card h3{margin:0 0 6px}
+.pill{display:inline-block;background:#e7efff;color:#0754c9;padding:4px 10px;border-radius:30px;font-size:12px;font-weight:bold}
+.card p{color:var(--muted);font-size:14px}
+.card .btn{width:100%;text-align:center;background:var(--yellow);color:#111827}
+.why{background:#eaf2ff}
+.feature{padding:22px;background:white;border-radius:12px}
+.feature b{display:block;margin-bottom:5px}
+.feature p{font-size:14px;color:var(--muted);margin:0}
+.cta{background:var(--navy);color:white;padding:42px 6%}
+.cta-inner{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+.cta h2 span{color:var(--yellow)}
+.cta p{color:#d7e1f5}
+footer{background:#040c1b;color:white;padding:28px 5%;text-align:center}
+footer p{font-size:13px;color:#c6d2e7}
+footer a{color:var(--yellow);text-decoration:none}
+@media(max-width:600px){header{align-items:flex-start}nav{gap:12px}.hero{padding:48px 6%}.wrap{padding-top:32px;padding-bottom:32px}.section-head h2{font-size:24px}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>MYTHIC BRANDS</h1>
-    <p>Your Brand. Your Audience. Your Opportunity.</p>
-  </header>
-
+<header>
+  <div class="logo">👑 MYTHIC<span>BRANDS</span>
+    <small>Advertise · Connect · Grow</small>
+  </div>
   <nav>
     <a href="#home">Home</a>
-    <a href="#adverts">Adverts</a>
-    <a href="#contact">Advertise</a>
+    <a href="#adverts">Browse Ads</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <div class="hero" id="home">
-    <h2>Make Your Brand Impossible to Ignore!</h2>
-    <p>Discover businesses, products and services from Kenya and around the world.</p>
-    <a class="btn" href="#contact">Advertise With Us</a>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="tag">Welcome to Mythic Brands</div>
+    <h1>Your One-Stop<br><span>Advertising Platform</span></h1>
+    <p>Promote your business, discover great products, and connect with customers in Kenya and around the world.</p>
+    <div class="actions">
+      <a class="btn primary" href="#adverts">Browse Advertisements →</a>
+      <a class="btn secondary" href="#contact">＋ Post Your Advert</a>
+    </div>
+    <p>🌍 Local and global reach &nbsp; · &nbsp; ⚡ Simple to use &nbsp; · &nbsp; 🚀 Grow your brand</p>
   </div>
+</section>
 
-  <main>
-    <section id="adverts">
-      <h2>Featured Adverts</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Technology</h3>
-          <p>Promote phones, computers and digital services here.</p>
-        </div>
-        <div class="card">
-          <h3>Fashion & Style</h3>
-          <p>Showcase clothing, shoes and accessories.</p>
-        </div>
-        <div class="card">
-          <h3>Business & Services</h3>
-          <p>Help customers discover your business and services.</p>
-        </div>
-        <div class="card">
-          <h3>Worldwide Brands</h3>
-          <p>Reach customers in Kenya and beyond.</p>
-        </div>
+<main>
+<section class="wrap" id="adverts">
+  <div class="section-head">
+    <div>
+      <h2>🔥 Featured Advertisements</h2>
+      <p class="sub">Discover products and services from our featured categories.</p>
+    </div>
+    <a class="btn primary" href="#categories">Explore Categories →</a>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="card-top">🍔</div>
+      <div class="card-body">
+        <span class="pill">Food & Business</span>
+        <h3>Food and Restaurants</h3>
+        <p>Promote restaurants, catering and food businesses.</p>
+        <a class="btn" href="#contact">Advertise Here</a>
       </div>
-      <p>These are sample categories. Contact us to submit a real advert.</p>
-    </section>
-
-    <section>
-      <h2>Why Mythic Brands?</h2>
-      <div class="card">
-        <p>✓ A platform for businesses and creators</p>
-        <p>✓ Kenyan and international audiences</p>
-        <p>✓ Free advert submissions during our launch</p>
+    </article>
+    <article class="card">
+      <div class="card-top">📱</div>
+      <div class="card-body">
+        <span class="pill">Electronics</span>
+        <h3>Phones & Technology</h3>
+        <p>Showcase phones, gadgets and digital products.</p>
+        <a class="btn" href="#contact">Advertise Here</a>
       </div>
-    </section>
-
-    <section id="contact">
-      <h2>Advertise With Us</h2>
-      <div class="card">
-        <p>Ready to promote your business? Contact Mythic Brands to submit your advert.</p>
-<a class="btn" href="https://wa.me/254790006169?text=Hello%20Mythic%20Brands%2C%20I%20want%20to%20advertise%20my%20business.">
-  Advertise on WhatsApp
-  </a>
-  
-        <p>Replace the email below with your real contact email before publishing.</p>
-        <a class="btn" href="mailto:YOUR-EMAIL@example.com?subject=Mythic%20Brands%20Advert">Email Us About an Advert</a>
+    </article>
+    <article class="card">
+      <div class="card-top">👟</div>
+      <div class="card-body">
+        <span class="pill">Fashion</span>
+        <h3>Fashion & Lifestyle</h3>
+        <p>Promote clothing, shoes and accessories.</p>
+        <a class="btn" href="#contact">Advertise Here</a>
       </div>
-    </section>
-  </main>
+    </article>
+    <article class="card">
+      <div class="card-top">💻</div>
+      <div class="card-body">
+        <span class="pill">Digital Services</span>
+        <h3>Web & Creative Services</h3>
+        <p>Help customers discover your skills and services.</p>
+        <a class="btn" href="#contact">Advertise Here</a>
+      </div>
+    </article>
+  </div>
+  <p class="sub">These are example categories, not confirmed paid or verified advertisements.</p>
+</section>
 
-  <footer>
-    <p>© 2026 Mythic Brands. All rights reserved.</p>
-    <p>Connecting brands with the world.</p>
-  </footer>
+<section class="wrap why" id="categories">
+  <h2>Explore Our Categories</h2>
+  <p class="sub">A place for brands, businesses, creators and opportunities.</p>
+  <div class="grid" style="margin-top:22px">
+    <div class="feature"><b>🏪 Business adverts</b><p>Introduce your company to new customers.</p></div>
+    <div class="feature"><b>🛍️ Products</b><p>Showcase items you have available.</p></div>
+    <div class="feature"><b>🧰 Services</b><p>Promote your professional skills and services.</p></div>
+    <div class="feature"><b>💼 Jobs & opportunities</b><p>Share relevant opportunities with visitors.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="about">
+  <h2>Why Choose Mythic Brands?</h2>
+  <p class="sub">A simple starting point for connecting businesses with customers.</p>
+  <div class="grid" style="margin-top:22px">
+    <div class="feature"><b>🌍 Wider Reach</b><p>Welcome visitors and advertisers from Kenya and worldwide.</p></div>
+    <div class="feature"><b>✨ Easy to Explore</b><p>Clear categories help people find what interests them.</p></div>
+    <div class="feature"><b>📣 Business Promotion</b><p>Give your brand a place to introduce itself.</p></div>
+    <div class="feature"><b>🤝 Direct Contact</b><p>Contact Mythic Brands to discuss an advert.</p></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <div>
+      <h2>Advertise <span>With Us!</span></h2>
+      <p>Ready to promote your business? Contact Mythic Brands to discuss submitting your advert.</p>
+      <p>Free advert submissions during our launch, subject to review.</p>
+    </div>
+    <a class="btn whatsapp" target="_blank" rel="noopener" href="https://wa.me/254790006169?text=Hello%20Mythic%20Brands%2C%20I%20would%20like%20to%20advertise%20my%20business.">☏ Advertise on WhatsApp →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">👑 MYTHIC<span>BRANDS</span></div>
+  <p>Advertise · Connect · Grow</p>
+  <p><a href="#home">Home</a> &nbsp; | &nbsp; <a href="#adverts">Browse Ads</a> &nbsp; | &nbsp; <a href="#contact">Contact</a></p>
+  <p>© 2026 Mythic Brands. All rights reserved.</p>
+</footer>
 </body>
   </html>
+
